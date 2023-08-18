@@ -1,0 +1,61 @@
+@import 'config'
+	
+html, body
+	background-color: #000
+	background-size: 20px 20px
+	background-position: center
+	background-image: linear-gradient(to right, $primary 2px, transparent 2px), linear-gradient(to bottom, $primary 1px, transparent 1px)
+	animation: zoom 2s ease-in-out forwards
+	backdrop-filter: blur(2px)
+	-webkit-backdrop-filter: blur(2px)
+	width: 100%
+	height: 100%
+
+	@keyframes zoom
+		from
+			background-size: 20px 20px
+		to
+			background-size: 100px 100px
+
+#section
+	height: 100%
+
+	& > #background-blur
+		height: 100%
+		backdrop-filter: blur(2px)
+		-webkit-backdrop-filter: blur(2px)
+
+		& > #welcome
+			height: 100%
+			gap: 20px
+			@include flex(column, center, center)
+
+			& > #welcome-image
+				padding: 0 20px 0 20px
+				width: 100%
+				max-width: 800px
+				opacity: 0
+				animation: appear 3s 1.5s ease-in-out forwards
+				
+				@keyframes appear 
+					from
+						opacity: 0
+					to
+						opacity: 1
+
+			& > #welcome-desc
+				width: 70%
+				font-size: clamp(1.2rem, 2.5vw, 2rem)
+				text-align: center
+				font-family: 'Rubik', sans-serif
+				opacity: 0
+				animation: appear 3s 3s ease-in-out forwards
+				
+				@keyframes appear 
+					from
+						opacity: 0
+					to
+						opacity: 1
+
+				@media screen and (max-width: 400px)
+					width: 90%

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap')
+	
+$text: #ffffff
+$background: #000000
+$primary: #7A0818
+$secondary: #2c0707
+$accent: #de2121
+
+* 
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+	color: $text
+
+//
+// Mixins
+//
+
+@mixin flex($direction, $justify, $align)
+	display: flex
+	flex-direction: $direction
+	justify-content: $justify
+	align-items: $align
