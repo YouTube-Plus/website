@@ -6,14 +6,20 @@
   color: #ffffff;
 }
 
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 html, body {
   background-color: #000;
   background-size: 20px 20px;
   background-position: center;
   background-image: linear-gradient(to right, #7A0818 2px, transparent 2px), linear-gradient(to bottom, #7A0818 1px, transparent 1px);
   animation: zoom 2s ease-in-out forwards;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
   width: 100%;
   height: 100%;
 }
@@ -26,15 +32,18 @@ html, body {
   }
 }
 
+#background-blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
 #section {
   height: 100%;
 }
-#section > #background-blur {
-  height: 100%;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-}
-#section > #background-blur > #welcome {
+#section > #welcome {
   height: 100%;
   gap: 20px;
   display: flex;
@@ -42,22 +51,14 @@ html, body {
   justify-content: center;
   align-items: center;
 }
-#section > #background-blur > #welcome > #welcome-image {
+#section > #welcome > #welcome-image {
   padding: 0 20px 0 20px;
   width: 100%;
   max-width: 800px;
   opacity: 0;
   animation: appear 3s 1.5s ease-in-out forwards;
 }
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-#section > #background-blur > #welcome > #welcome-desc {
+#section > #welcome > #welcome-desc {
   width: 70%;
   font-size: clamp(1.2rem, 2.5vw, 2rem);
   text-align: center;
@@ -65,16 +66,8 @@ html, body {
   opacity: 0;
   animation: appear 3s 3s ease-in-out forwards;
 }
-@keyframes appear {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @media screen and (max-width: 400px) {
-  #section > #background-blur > #welcome > #welcome-desc {
+  #section > #welcome > #welcome-desc {
     width: 90%;
   }
 }/*# sourceMappingURL=index.css.map */
